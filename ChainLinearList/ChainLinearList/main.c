@@ -8,14 +8,32 @@
 
 #include <stdio.h>
 
-#define ElemType int
+
+typedef int ElemType;
 
 typedef struct {
     ElemType data;
     struct Node* next;
 } Node;
 
-typedef struct Node* list;
+typedef struct Node* LinkList;
+
+int getElemType(LinkList list,int num){
+    Node* p;
+    p = list;
+    for (int i = 0; i<num; i++) {
+        p = p
+    }
+}
+
+//int insertData(LinkList list ,int num ,ElemType e){
+//    
+//    LinkList p;
+//    p = *list;
+//    for (int i = 0; i<num; i++) {
+//    }
+//    return 1;
+//}
 
 int main(int argc, const char * argv[]) {
     // insert code here...
