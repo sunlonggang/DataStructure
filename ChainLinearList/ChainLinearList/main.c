@@ -20,22 +20,20 @@ typedef struct {
 //typedef struct Node* LinkList;
 
 
-//int getElemType(LinkList list,int num){
-//    Node* p;
-//    p = list;
-//    for (int i = 0; i<num; i++) {
-//        p = p
-//    }
-//}
+int getElemType(LinkList list,int num){
+    Node* p;
+    p = list;
+    return 1;
+}
 
-//int insertData(LinkList list ,int num ,ElemType e){
-//    
-//    LinkList p;
-//    p = *list;
-//    for (int i = 0; i<num; i++) {
-//    }
-//    return 1;
-//}
+int insertData(LinkList list ,int num ,ElemType e){
+    
+    LinkList p;
+    p = (LinkList)malloc(sizeof(Node));
+    scanf("%d",&p->data);
+    list->next = p;
+    return 1;
+}
 
 LinkList initLink(void){
     Node* list;
@@ -55,6 +53,7 @@ int main(int argc, const char * argv[]) {
     list = initLink();
     if (list != NULL) {
         printf("success\n");
+        printf("%p\n",list);
     }else{
         printf("main init fail\n");
     }
