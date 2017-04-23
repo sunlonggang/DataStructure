@@ -21,8 +21,14 @@ typedef struct {
 
 
 int getElemType(LinkList list,int num){
-    Node* p;
+    LinkList p;
     p = list;
+    int i= 0;
+    while (p->next != NULL) {
+        printf("%d===%d\n",i,p->data);
+        i++;
+        p++;
+    }
     return 1;
 }
 
@@ -30,7 +36,8 @@ int insertData(LinkList list ,int num ,ElemType e){
     
     LinkList p;
     p = (LinkList)malloc(sizeof(Node));
-    scanf("%d",&p->data);
+    p->data = num;
+    p->next = NULL;
     list->next = p;
     return 1;
 }
@@ -59,6 +66,10 @@ int main(int argc, const char * argv[]) {
     }
     
     
+    insertData(list, 555, 0);
+    insertData(list, 444, 0);
+    insertData(list, 99, 0);
+    getElemType(list,0);
     
     return 0;
 }
