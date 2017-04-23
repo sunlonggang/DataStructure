@@ -7,6 +7,7 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 
 
 typedef int ElemType;
@@ -14,17 +15,18 @@ typedef int ElemType;
 typedef struct {
     ElemType data;
     struct Node* next;
-} Node;
+} Node,*LinkList;
 
-typedef struct Node* LinkList;
+//typedef struct Node* LinkList;
 
-int getElemType(LinkList list,int num){
-    Node* p;
-    p = list;
-    for (int i = 0; i<num; i++) {
-        p = p
-    }
-}
+
+//int getElemType(LinkList list,int num){
+//    Node* p;
+//    p = list;
+//    for (int i = 0; i<num; i++) {
+//        p = p
+//    }
+//}
 
 //int insertData(LinkList list ,int num ,ElemType e){
 //    
@@ -35,9 +37,27 @@ int getElemType(LinkList list,int num){
 //    return 1;
 //}
 
+LinkList initLink(void){
+    Node* list;
+    list = (LinkList)malloc(sizeof(Node));
+    if (list == NULL) {
+        printf("fail");
+        exit(0);
+    }
+    list->next =NULL;
+    return list;
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
-//    printf("Hello, World!\n");
+    
+    LinkList list;
+    list = initLink();
+    if (list != NULL) {
+        printf("success\n");
+    }else{
+        printf("main init fail\n");
+    }
     
     
     
