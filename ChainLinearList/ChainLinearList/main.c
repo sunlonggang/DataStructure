@@ -36,9 +36,15 @@ int insertData(LinkList list ,int num ,ElemType e){
     
     LinkList p;
     p = (LinkList)malloc(sizeof(Node));
+    
+    LinkList node  = list;
+    
+    while (node->next != NULL) {
+        node++;
+    }
     p->data = num;
     p->next = NULL;
-    list->next = p;
+    node->next = p;
     return 1;
 }
 
