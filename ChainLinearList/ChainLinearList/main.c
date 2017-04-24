@@ -138,7 +138,7 @@ void  checkRing(Node* list){
             num1 ++;
             p1 = p1->next;
         }
-        printf("num1 ==%d ===%d\n",num1,num2);
+        printf("num1==%d   num2===%d\n",num1,num2);
         if (num1 == num2) {
             num1 = 1;
             num2++;
@@ -182,7 +182,7 @@ int main(int argc, const char * argv[]) {
 //    insertHeadData(list);
     //得到链表数据
     getElemType(list,0);
-//    setRingChain(list);
+    setRingChain(list);
     checkRing(list);
     return 0;
 }
