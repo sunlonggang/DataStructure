@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 typedef int ElemType;
@@ -83,7 +84,28 @@ void insertTailData(Node* list){
         newList = p;
     }
     newList->next = NULL;
-    
+}
+
+//头插法
+void insertHeadData(Node* list){
+    int num = 0;
+    ElemType data = 0;
+    printf("请输入数据个数:");
+    scanf("%d",&num);
+    Node* pnew;
+
+    for (int i = 1; i<=num; i++) {
+        pnew = (Node*)malloc(sizeof(Node));
+        if (pnew == NULL) {
+            printf("insert fail");
+            exit(0);
+        }
+        printf("请输入%d个数",i);
+        scanf("%d",&data);
+        pnew->data = data;
+        pnew->next = list->next;
+        list->next = pnew;
+    }
 }
 
 
@@ -109,7 +131,10 @@ int main(int argc, const char * argv[]) {
      */
     
     //尾插法多数据插入
-    insertTailData(list);
+//    insertTailData(list);
+    
+    //头插法
+    insertHeadData(list);
     getElemType(list,0);
     
     return 0;
