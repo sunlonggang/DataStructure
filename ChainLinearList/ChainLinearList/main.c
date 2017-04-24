@@ -77,7 +77,7 @@ void insertTailData(Node* list){
             printf("insert fail");
             exit(0);
         }
-        printf("\n请输入%d个数",i);
+        printf("请输入%d个数",i);
         scanf("%d",&data);
         p->data = data;
         newList->next = p;
@@ -108,6 +108,51 @@ void insertHeadData(Node* list){
     }
 }
 
+//设置循环链表
+
+void setRingChain(Node* list){
+    int num = 0;
+    printf("设置环形：");
+    scanf("%d",&num);
+    Node* node = list->next;
+    Node* p = NULL;
+    int i =1;
+    while (node->next != NULL) {
+        if (i == num) {
+            p = node;
+        }
+        node = node->next;
+        i++;
+    }
+    node->next = p;
+}
+
+void  checkRing(Node* list){
+    int num1=1,num2=2;
+    Node* p1 = NULL;
+    Node* p2 = NULL;
+    p2 = p1 = list->next;
+    p2 = p2->next;
+    while (p2->next != NULL) {
+        while (p1 != p2) {
+            num1 ++;
+            p1 = p1->next;
+        }
+        printf("num1 ==%d ===%d\n",num1,num2);
+        if (num1 == num2) {
+            num1 = 1;
+            num2++;
+            p1 = list->next;
+            p2 = p2->next;
+        }else{
+            printf("ring exist\n");
+            return;
+        }
+
+    }
+    printf("no ring\n");
+}
+
 
 //void
 int main(int argc, const char * argv[]) {
@@ -131,11 +176,13 @@ int main(int argc, const char * argv[]) {
      */
     
     //尾插法多数据插入
-//    insertTailData(list);
+    insertTailData(list);
     
     //头插法
-    insertHeadData(list);
+//    insertHeadData(list);
+    //得到链表数据
     getElemType(list,0);
-    
+//    setRingChain(list);
+    checkRing(list);
     return 0;
 }
