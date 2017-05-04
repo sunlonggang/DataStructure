@@ -79,7 +79,10 @@ int main(int argc, const char * argv[]) {
     
 //    insertSort(a);
     
-    selectSort(a);
+//    selectSort(a);
+    
+    
+    
     return 0;
 }
 
