@@ -99,6 +99,10 @@ void quickSort(int a[],int left,int right){
     }
 }
 
+void QuickSort(int a[],int l, int r){
+    
+}
+
 //void quick_sort(int s[], int l, int r)
 //{
 //    if (l < r)
